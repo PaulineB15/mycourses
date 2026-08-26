@@ -1,4 +1,4 @@
-# MY DOCUMENTATION
+# MY COURSES
 ## How to set up my project ?
 
 1. [Download Python](https://www.python.org/downloads/release/python-3147/) Windows installer (64-bit)
