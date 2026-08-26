@@ -1,2 +1,5 @@
 # Python virtuel environment
 .venv/
+
+# Temporary file that was created by Github deployment
+site/
