@@ -1,4 +1,16 @@
 site_name: Mes cours
 theme:
   name: material
-  
+plugins:
+  - search
+  - mkdocs_quiz:
+      show_correct: true
+  - termynal:
+      prompt_literal_start: ["$", ">"]
+
+markdown_extensions:
+  - admonition          # les blocs !!! info
+  - pymdownx.details    # les corrigés repliables ???
+  - pymdownx.superfences
+  - pymdownx.tasklist:  # la checklist de fin du TP
+      custom_checkbox: true
