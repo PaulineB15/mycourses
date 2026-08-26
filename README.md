@@ -13,6 +13,10 @@
 7. Freeze dependencies: `pip freeze -r requirements.txt > requirements.txt`
 8. Initalize website's structure: `mkdocs new .`
 9. To start and get website's link (locally): `mkdocs serve`
+10. Create Github repository
+11. Initialize local repository (via terminal) `git init`
+12. Link Github repository and local repository `git remote add origin https://github.com/PaulineB15/mycourses.git`
+
 
 
 
@@ -20,3 +24,5 @@
 1. Do step 1 to 5 from previous list
 2. Install dependencies `pip install -r requirements.txt`
 3. To start and get website's link (locally): `mkdocs serve`
+4. Create course contents (Markdown), `git add`, `git commit`, `git push`
+5. Publish website on Github: `mkdocs gh-deploy`
