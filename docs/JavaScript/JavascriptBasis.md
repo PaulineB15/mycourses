@@ -4,11 +4,32 @@ JavaScript (JS) : est un langage de programmation côté client. Il permet de re
 pages web interactives et dynamiques (modifier le contenu, réagir aux clics, animer des
 éléments) sans avoir besoin de recharger la page.
 
+Où écrire du JavaScript ?
 
-## 1. Basic syntax
+Le JavaScript s'exécute directement dans le navigateur. Il s'intègre généralement dans une page HTML avec des balises `<script>`. 
+
+![Js Script](../Images/JavascriptScript.png)
+
+## 1. Débuter avec Js
+
+### a. Basic syntax
 - JavaScript is case-sensitive. Lines end by `;`
  - Block are delimited curly brackets by `{ }`
  - Comments are between `/* */` for multiple lines or after `//` for one line.
+
+ ### b. Affichage 
+
+- `console.log("Coucou");`
+
+Affiche des informations dans la console du navigateur ou de l'environnement d'exécution (comme Node.js).
+
+C'est l'outil essentiel du développeur pour le débogage. Il permet de vérifier la valeur d'une variable ou le flux d'exécution du programme sans affecter l'interface utilisateur.
+
+- `alert("Hello World !");`
+
+Affiche une pop-up directement à l'utilisateur.
+
+Principalement utilisé pour les messages d'avertissement ou de confirmation simples, mais il est souvent évité dans les applications modernes pour une meilleure expérience utilisateur.
 
 ## 2. Variables & Types de données
 
@@ -45,6 +66,8 @@ Uncaught TypeError: Assignment to constant variable.
 - `String`- Text that is wrap it in `''`or `""`
 - `Number`- 2 types of numbers: `integer (30)` and `floating (5.2)`
 - `Boolean`- To test a condition `(true of false)`
+- `Undefined` -	Variable déclarée mais non définie	let x;
+- `Null` -	Valeur intentionnellement vide	let y = null;
 
 <!-- termynal -->
 
@@ -150,18 +173,25 @@ user.nickname = "Paupau"
 
 ## 3. Operators 
 
-### a. Arithmetic
+### a. Opérateurs Arithmétiques
 Arithmetic operators are used for performing mathematical calculations in JavaScript.
 
 ![Arithmetic operators](../Images/ArithmeticOperators.png)
 
-### b. Assignment operators
-Assignment operators are operators that assign a value to a variable
+### b. Opérateurs d'affectation (raccourcis)
+Permet de modifier la valeur d'une variable en utilisant sa valeur actuelle
 
 ![Assignement operators](../Images/Operators.png)
 
-### c. Equality
+### c. Opérateurs d'égalité
 - `Egalité simple (==)` : Convertit automatiquement les types si nécessaire, puis compare uniquement les valeurs.
+
+*Example :*
+```js
+//  Égalité simple (convertit les types) 
+let a = ("2" == 2);    // true  (Les valeurs se ressemblent)
+let b = ("2" != 2);    // false (Ils ne sont pas différents en valeur)
+```
 
 - `Egalité stricte (===)` : Compare à la fois la **valeur** ET le **type** de la donnée (texte, nombre, etc.).
 
@@ -170,19 +200,18 @@ Assignment operators are operators that assign a value to a variable
 *Example :*
 
 ```js
-//  Égalité simple (convertit les types) 
-let a = ("2" == 2);    // true  (Les valeurs se ressemblent)
-let b = ("2" != 2);    // false (Ils ne sont pas différents en valeur)
 
 // Égalité stricte (vérifie le type ET la valeur)
 let c = ("2" === 2);   // false (L'un est du texte, l'autre est un nombre !)
 let d = ("2" !== 2);   // true  (Ils sont bien strictement différents)
 ```
 
-### d. Comparison
+### d. Opérateurs de comparaison
 Tout comme en mathématiques, les opérateurs de comparaison fonctionnent de la même manière que dans la plupart des autres langages de programmation.
 
-*Note intéressante : ces opérateurs peuvent également être utilisés pour comparer du texte (chaînes de caractères) selon l'ordre alphabétique.*
+*Note: ces opérateurs peuvent également être utilisés pour comparer du texte (chaînes de caractères) selon l'ordre alphabétique.*
+
+[Opérateur de comparaison](../Images/OperateurComparaison.png) 
 
 *Example:*
 
@@ -200,10 +229,41 @@ let c = ("2" >= 2);       // true  (Le texte "2" est converti en nombre pour com
 let f = ('abc' < 'def');  // true  (La lettre 'a' vient avant 'd' dans l'alphabet)
 ```
 
+### e. Opérateurs logiques
+
+- `ET (&&)` : La condition entière n'est vraie que si toutes les sous-conditions sont vraies.
+
+*Example:*
+
+```js
+if (x < y && x > 3) { /* ... */ } // Vrai seulement si x est à la fois PLUS PETIT que y ET PLUS GRAND que 3.
+```
+
+- `OU (||)` : La condition entière est vraie si au moins une des sous-conditions est vraie.
+
+*Example:*
+
+```js
+if (x < y || x > 5) { /* ... */ } // Vrai si x est PLUS PETIT que y OU PLUS GRAND que 5.
+```
+
+
 ## 4.Statements
+### a. Conditions
+Les conditions permettent d'exécuter du code seulement si une affirmation est vraie. On utilise les mots-clés if, else if, et else.
+- if / else
+### b. Boucles
+Les boucles servent à répéter une action sans avoir à réécrire le code.
+- For
+- While
+
+- Switch
+
+
+
 ## 5.Functions
 
-[def]: ./Images/Arithmeticoperators
+
 
 
 
@@ -252,6 +312,8 @@ Bonjour
 ReferenceError: message is not defined
 # La variable n'existe qu'entre les accolades qui l'entourent
 ```
+
+
 
 
 # Quiz – Atelier 1
@@ -346,7 +408,9 @@ Exemple : `const doubler = (n) => n * 2;`
 <!-- mkdocs-quiz results -->
 
 
-# Atelier 1 – Découvrir les bases de JavaScript
+
+
+# TEST - Atelier 1 – Découvrir les bases de JavaScript
 
 !!! info "En bref"
     **Durée : 15 min** · **Prérequis :** Node.js installé · **Fichier :** `atelier1.js`
