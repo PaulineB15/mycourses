@@ -12,12 +12,12 @@ Le JavaScript s'exécute directement dans le navigateur. Il s'intègre général
 
 ## 1. Débuter avec Js
 
-### a. Basic syntax
+### - Basic syntax
 - JavaScript is case-sensitive. Lines end by `;`
  - Block are delimited curly brackets by `{ }`
  - Comments are between `/* */` for multiple lines or after `//` for one line.
 
- ### b. Affichage 
+### - Affichage 
 
 - `console.log("Coucou");`
 
@@ -62,7 +62,7 @@ Uncaught TypeError: Assignment to constant variable.
 ```
 ---
 
-### a. Types
+### - Types
 - `String`- Text that is wrap it in `''`or `""`
 - `Number`- 2 types of numbers: `integer (30)` and `floating (5.2)`
 - `Boolean`- To test a condition `(true of false)`
@@ -97,7 +97,7 @@ let age = 38;                          // Number
 let etudiante = true;                 // Boolean (true/false)
 ```
 
-### b. String concatenation
+### - String concatenation
 Assembler des morceaux de texte et variables.
 
 #### Simple concatenation
@@ -134,7 +134,7 @@ const phrase = 'C\'est le dossier de pauline bennoin';
 console.log(phrase); // Affiche : C'est le dossier de pauline bennoin
 ```
 
-### c. Other types
+### - Other types
 - `Array` - Liste ordonnée de valeurs. Commence à partir de **l'index 0**.
 
 
@@ -236,7 +236,8 @@ let f = ('abc' < 'def');  // true  (La lettre 'a' vient avant 'd' dans l'alphabe
 *Example:*
 
 ```js
-if (x < y && x > 3) { /* ... */ } // Vrai seulement si x est à la fois PLUS PETIT que y ET PLUS GRAND que 3.
+if (x < y && x > 3) { /* ... */ } 
+// Vrai seulement si x est à la fois PLUS PETIT que y ET PLUS GRAND que 3.
 ```
 
 - `OU (||)` : La condition entière est vraie si au moins une des sous-conditions est vraie.
@@ -244,40 +245,239 @@ if (x < y && x > 3) { /* ... */ } // Vrai seulement si x est à la fois PLUS PET
 *Example:*
 
 ```js
-if (x < y || x > 5) { /* ... */ } // Vrai si x est PLUS PETIT que y OU PLUS GRAND que 5.
+if (x < y || x > 5) { /* ... */ } 
+// Vrai si x est PLUS PETIT que y OU PLUS GRAND que 5.
 ```
 
 
 ## 4.Statements
 ### a. Conditions
-Les conditions permettent d'exécuter du code seulement si une affirmation est vraie. On utilise les mots-clés if, else if, et else.
-- if / else
+Les conditions permettent d'exécuter du code différemment en fonction de conditions.
+
+#### `- if / else if / else`:
+
+- Le `if` est obligatoire (c'est le point d'entrée)
+- Le `else if` est optionnel (on peut en mettre autant qu'on veut entre le if et le else).
+- Le `else` est optionnel (il n'a jamais de condition entre parenthèses, il attrape tout le reste). Si aucune condition n'est vraie, le bloc **else** est exécuté
+
+
+*Example:*
+
+```js
+let heure = 14;
+
+if (heure < 12) {
+  console.log("Bonjour !"); 
+  // S'affiche si l'heure est inférieure à 12
+
+} else if (heure < 18) {
+  console.log("Bon après-midi !"); 
+  // S'affiche entre 12 et 17
+
+} else {
+  console.log("Bonsoir !"); 
+  // S'affiche sinon (18 et plus)
+}
+```
+#### `- Switch`
+
+`Switch`est une alternative à la condition `if / else if / else`.
+Utile pour comparer une seule variable à plusieurs valeurs précises (par exemple : vérifier un rôle utilisateur, un jour de la semaine, ou un statut).
+
+*Example:*
+
+Imaginons que nous voulons dire à un conducteur ce qu'il doit faire en fonction de la couleur du feu.
+```js
+let couleurDuFeu = "rouge";
+
+switch (couleurDuFeu) {
+  case "vert":
+    console.log("Vous pouvez avancer.");
+    break;
+
+  case "orange":
+    console.log("Ralentissez et préparez-vous à vous arrêter.");
+    break;
+
+  case "rouge":
+    console.log("Arrêtez-vous immédiatement !"); 
+    break;
+
+  default:
+    console.log("Le feu est en panne, soyez très prudent.");
+}
+```
+
+#### `- Négation (!)`
+
+L'opérateur `!` inverse la valeur booléenne : `!true` devient `false`, et `!false` devient `true`.
+
+*Example:*
+
+```js
+let quizTermine = false;
+
+if (quizTermine === false) {
+    console.log("Le quiz est toujours en cours...");
+}
+
+if (!quizTermine) {
+    console.log("Le quiz est toujours en cours...");
+}
+// Se lit: "Si le quiz N'EST PAS terminé".
+```
+
 ### b. Boucles
-Les boucles servent à répéter une action sans avoir à réécrire le code.
-- For
-- While
+Les boucles servent à répéter une séquence d'instructions un certain nombre de fois.
 
-- Switch
+#### - `While`
+
+Tant que la condition est `true`, elle exécute le bloc `{}`.
+
+Dès que la condition devient false, elle s'arrête immédiatement.
+
+*Example:*
+
+```js
+
+let compteur = 0; 
+// 1. Initialisation hors de la boucle
+
+while (compteur < 5) { 
+// 2. Condition vérifiée avant d'entrer
+    console.log("Tour numéro : " + compteur);
+    
+    compteur++; 
+// 3. Modification (sinon boucle infinie !)
+}
+```
+
+⚠️ Le piège classique : La boucle infinie
+
+*Si vous oubliez de modifier la variable dans le bloc (ici compteur++), la condition restera toujours vraie et votre navigateur plantera (ou tournera en boucle indéfiniment).*
+
+#### - `Do...while`
+
+Dans un while classique, si la condition est fausse dès le départ, le code à l'intérieur ne s'exécute jamais.
+
+La boucle `do...while` a une particularité : elle exécute le bloc de code au moins une fois, puis vérifie la condition à la fin de chaque tour.
 
 
+*Example:*
+
+```js
+let motDePasse = "";
+
+do {
+    // S'exécute toujours AU MOINS une fois
+    motDePasse = prompt("Entrez le mot de passe :");
+} while (motDePasse !== "secret123");
+
+console.log("Accès accordé !");
+```
+
+#### - `for`
+C'est la boucle la plus courante, idéale lorsque vous savez combien de fois vous devez itérer.
+
+*Example:*
+
+```js
+for (let i = 0; i < 10; i++) { 
+// i++ est un pas de 1
+// ... code à exécuter 10 fois ...
+}
+```
+
+- `Initialisation (let i = 0)` : Exécutée une seule fois au début.
+
+- `Condition (i < 10)` : Vérifiée avant chaque itération. Si elle est fausse, la boucle s'arrête.
+
+- `Incrémentation/Décrémentation (i++)` : Exécutée après chaque itération.
+
+
+
+#### - `Utilisation pour parcourir un tableau`
+
+`.length` indique le nombre total d'éléments présents dans un tableau (ou le nombre de caractères dans une chaîne de texte).
+
+Comment ça fonctionne ? JavaScript compte automatiquement les éléments.
+
+*Example:*
+
+```js
+let fruits = ["pomme", "banane", "orange"];
+
+// Affiche 3 (car il y a 3 éléments)
+console.log(fruits.length); 
+```
+
+Pourquoi l'utilise-t-on dans une boucle `for` ?
+
+En JavaScript, le premier élément d'un tableau est toujours à l'index 0. 
+Si un tableau contient 3 éléments :
+- Le 1ᵉʳ est à l'index 0
+- Le 2ᵉ est à l'index 1Le 3ᵉ est à l'index 2
+- Le dernier index accessible est donc toujours length - 1.
+ *(ici 3 - 1 = 2)*
+
+```Js
+let fruits = ["pomme", "banane", "orange"]; // length = 3
+
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+```
+Déroulement pas à pas :
+- Tour 1 : i = 0 → 0 < 3 (vrai) → affiche fruits[0] (pomme), puis i passe à 1.
+- Tour 2 : i = 1 → 1 < 3 (vrai) → affiche fruits[1] (banane), puis i passe à 2.
+- Tour 3 : i = 2 → 2 < 3 (vrai) → affiche fruits[2] (orange), puis i passe à 3.
+- Arrêt : i = 3 → 3 < 3 (faux) → la boucle s'arrête exactement au bon moment sans dépasser.
+
+Les deux grands avantages:
+
+- **Dynamique** : Si vous ajoutez ou supprimez des questions dans votre quiz plus tard, vous n'avez pas besoin de changer le chiffre dans la boucle, tab.length s'adapte automatiquement.
+- **Évite les erreurs undefined** : Si vous alliez trop loin (par exemple jusqu'à i <= 3), fruits[3] n'existerait pas et renverrait `undefined`.
 
 ## 5.Functions
+Une fonction est un bloc de code réutilisable conçu pour effectuer une tâche précise. 
+
+### a. Anatomie et déclaration d'une fonction
+Une déclaration de fonction est la méthode classique pour définir un bloc d'instructions réutilisable sous un nom précis.
+
+Une fonction repose sur 4 notions clés :
+
+- `Le nom` : identifie l'action (en général un verbe : calculerScore, changerCouleur).
+
+- `Les paramètres` : les variables d'entrée (« les ingrédients ») placées entre parenthèses.
+
+- `Le corps {}` : les instructions exécutées lors de l'appel.
+
+- `Le retour (return)` : le résultat final que la fonction renvoie (« le plat cuisiné »).
 
 
+*Example:*
 
+```js
+// 1. Déclaration de la fonction
 
+// "saluer" -> NOM de la fonction : il identifie l'action.
+// "(nom)" -> PARAMÈTRE : c'est la variable d'entrée que la fonction va utiliser.
+function saluer(nom) { 
+  
+  // Les accolades { ... } délimitent LE CORPS de la fonction : 
+  // elles contiennent le bloc d'instructions qui sera exécuté à chaque appel.
+  
+  return "Salut " + nom + " !";
+  // "return" est LE RETOUR : c'est l'instruction qui indique le résultat 
+  // final que la fonction doit renvoyer vers l'endroit où elle a été appelée. 
+  
+}
 
-
-
-
-
-
-
-
-
-
-
-## 3. Écrire des fonctions
+// 2. Appel de la fonction
+// On appelle la fonction par son nom en lui passant la valeur "Thomas" pour le paramètre.
+let message = saluer("Thomas");
+console.log(message); // Affiche : "Salut Thomas !"
+```
 
 <!-- termynal -->
 
@@ -293,6 +493,96 @@ undefined
 > calculerTTC(135)
 162
 ```
+
+#### - Paramètres vs Arguments
+
+- `Paramètre` : la variable définie lors de la création de la fonction.
+- `Argument` : la valeur réelle fournie lors de l'appel.
+
+```Js
+// 'prenom' et 'points' sont des PARAMÈTRES
+function afficherScore(prenom, points) {
+    console.log(`${prenom} a obtenu un score de ${points}/10.`);
+}
+
+// "Pauline" et 8 sont les ARGUMENTS passés à la fonction
+afficherScore("Pauline", 8); // Affiche : "Pauline a obtenu un score de 8/10."
+afficherScore("Lucas", 5);   // Réutilisation immédiate avec d'autres valeurs !
+```
+
+#### - Le rôle de return : Renvoyer une valeur
+Une fonction peut soit réaliser une action (afficher un message, modifier le DOM), soit produire une valeur réutilisable avec return.
+
+```Js
+// Fonction sans return : elle agit, mais ne "donne" rien au reste du code
+function saluer(nom) {
+    console.log("Bonjour " + nom);
+}
+
+let resultat1 = saluer("Alice"); 
+// Affiche "Bonjour Alice"
+console.log(resultat1);
+// Affiche undefined !
+
+
+// Fonction AVEC return : elle calcule et rend la valeur
+function calculerPourcentage(score, total) {
+    let calcul = (score / total) * 100;
+    return calcul;
+    // Renvoie le résultat au code qui a appelé la fonction
+}
+
+let monPourcentage = calculerPourcentage(7, 10); // monPourcentage reçoit 70
+console.log(`Votre taux de réussite est de ${monPourcentage}%.`);
+```
+⚠️ Règle clé : L'instruction `return` met fin immédiatement à la fonction. Tout code situé après un return dans le même bloc ne sera jamais exécuté.
+
+### b. Appel et utilisation de la fonction
+ 
+ Déclarer une fonction ne l'exécute pas : il faut obligatoirement l'appeler par son nom en lui transmettant ses arguments entre parenthèses :  
+ 
+ ```Js
+ // Appel de la fonction avec l'argument "Thomas"
+let message = saluer("Thomas");
+
+console.log(message); // Affiche : "Salut Thomas !"
+```
+- Lors de l'appel **saluer("Thomas")**, la valeur "Thomas" est transmise au paramètre nom.
+- La fonction s'exécute, assemble la phrase **"Salut Thomas !"** et la renvoie grâce à return.
+- La variable message récupère ce résultat pour pouvoir l'afficher ou le réutiliser dans le reste du programme.
+
+
+#### c. Fonction classique VS Fonction fléchée
+
+En JavaScript, il existe deux manières principales d'écrire une fonction : la déclaration classique (avec le mot-clé function) et la fonction fléchée (arrow function, introduite avec la norme ES6 en 2015). 
+
+##### - Fonction classique (déclarative)
+
+C'est la syntaxe historique. On utilise le mot-clé function suivi du nom de la fonction : 
+```Js
+ function calculerTTC(montant) {
+  return montant * 1.2;
+}
+```
+Avantages : Très lisible, explicite et bénéficie du hoisting (on peut appeler la fonction plus haut dans le fichier, avant même sa déclaration).  Usage typique : Les fonctions principales du programme (ex. calculerTotalHT, verifierReponse).  2. La fonction fléchée (=>)La fonction fléchée stocke une fonction anonyme dans une constante (const). Elle se caractérise par la flèche => :  JavaScript// 1. Version complète
+const calculerTTC = (montant) => {
+  return montant * 1.2;
+};
+
+// 2. Version courte (return implicite)
+const calculerTTC = (montant) => montant * 1.2;
+Les règles d'allègement de la syntaxe :Accolades et return facultatifs (une seule instruction) : S'il n'y a qu'une seule expression à exécuter, on retire les accolades {} et le mot-clé return. La valeur calculée est automatiquement renvoyée (c'est le retour implicite).  Parenthèses facultatives (un seul paramètre) : S'il n'y a qu'un unique paramètre (ici montant), les parenthèses autour de lui peuvent être omises : montant => montant * 1.2.
+
+
+
+
+
+
+
+
+## 3. Écrire des fonctions
+
+
 
 ---
 

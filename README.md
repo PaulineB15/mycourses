@@ -23,6 +23,7 @@
 ## How to deploy this project on another laptop ?
 1. Do step 1 to 5 from previous list
 2. Install dependencies `pip install -r requirements.txt`
-3. To start and get website's link (locally): `mkdocs serve`
-4. Create course contents (Markdown), `git add`, `git commit`, `git push`
-5. Publish website on Github: `mkdocs gh-deploy`
+3. Activate the virtual environment `.\.venv\Scripts\activate`
+4. To start and get website's link (locally): `mkdocs serve`
+5. Create course contents (Markdown), `git add`, `git commit`, `git push`
+6. Publish website on Github: `mkdocs gh-deploy`
