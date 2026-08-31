@@ -479,21 +479,6 @@ let message = saluer("Thomas");
 console.log(message); // Affiche : "Salut Thomas !"
 ```
 
-<!-- termynal -->
-
-```
-# Forme classique
-> function calculerTotalHT(prix, quantite) { return prix * quantite }
-undefined
-> calculerTotalHT(45, 3)
-135
-# Forme fléchée, plus courte
-> const calculerTTC = (montant) => montant * 1.2
-undefined
-> calculerTTC(135)
-162
-```
-
 #### - Paramètres vs Arguments
 
 - `Paramètre` : la variable définie lors de la création de la fonction.
@@ -556,6 +541,20 @@ console.log(message); // Affiche : "Salut Thomas !"
 
 En JavaScript, il existe deux manières principales d'écrire une fonction : la déclaration classique (avec le mot-clé function) et la fonction fléchée (arrow function, introduite avec la norme ES6 en 2015). 
 
+<!-- termynal -->
+```
+# Forme classique
+> function calculerTotalHT(prix, quantite) { return prix * quantite }
+undefined
+> calculerTotalHT(45, 3)
+135
+# Forme fléchée, plus courte
+> const calculerTTC = (montant) => montant * 1.2
+undefined
+> calculerTTC(135)
+162
+```
+
 ##### - Fonction classique (déclarative)
 
 C'est la syntaxe historique. On utilise le mot-clé function suivi du nom de la fonction : 
@@ -564,54 +563,35 @@ C'est la syntaxe historique. On utilise le mot-clé function suivi du nom de la 
   return montant * 1.2;
 }
 ```
-Avantages : Très lisible, explicite et bénéficie du hoisting (on peut appeler la fonction plus haut dans le fichier, avant même sa déclaration).  Usage typique : Les fonctions principales du programme (ex. calculerTotalHT, verifierReponse).  2. La fonction fléchée (=>)La fonction fléchée stocke une fonction anonyme dans une constante (const). Elle se caractérise par la flèche => :  JavaScript// 1. Version complète
+Avantages : 
+- Très lisible, explicite et bénéficie du hoisting (on peut appeler la fonction plus haut dans le fichier, avant même sa déclaration).  
+- Usage typique : Les fonctions principales du programme (ex. calculerTotalHT, verifierReponse).  
+
+##### - Fonction fléchée (=>)
+La fonction fléchée stocke une fonction anonyme dans une constante (const). Elle se caractérise par la flèche => 
+
+```Js
+// 1. Version complète
 const calculerTTC = (montant) => {
   return montant * 1.2;
 };
 
 // 2. Version courte (return implicite)
 const calculerTTC = (montant) => montant * 1.2;
-Les règles d'allègement de la syntaxe :Accolades et return facultatifs (une seule instruction) : S'il n'y a qu'une seule expression à exécuter, on retire les accolades {} et le mot-clé return. La valeur calculée est automatiquement renvoyée (c'est le retour implicite).  Parenthèses facultatives (un seul paramètre) : S'il n'y a qu'un unique paramètre (ici montant), les parenthèses autour de lui peuvent être omises : montant => montant * 1.2.
-
-
-
-
-
-
-
-
-## 3. Écrire des fonctions
-
-
-
----
-
-## 4. Les blocs
-
-<!-- termynal -->
-
-```
-$ cat bloc.js
-if (true) {
-  const message = "Bonjour";
-  console.log(message);
-}
-console.log(message);
-$ node bloc.js
-Bonjour
-ReferenceError: message is not defined
-# La variable n'existe qu'entre les accolades qui l'entourent
 ```
 
+- Accolades et `return` facultatifs (une seule instruction) : S'il n'y a qu'une seule expression à exécuter, on retire les accolades `{}` et le mot-clé return. La valeur calculée est automatiquement renvoyée (c'est le retour implicite).
+- Parenthèses facultatives (un seul paramètre) : S'il n'y a qu'un unique paramètre (ici `montant`), les parenthèses autour de lui peuvent être omises : montant => montant * 1.2.
 
 
 
-# Quiz – Atelier 1
+
+# Quiz  
 
 <!-- mkdocs-quiz intro -->
 
 <quiz>
-Quel mot-clé utilise-t-on pour une valeur qui ne changera jamais ?
+1. Quel mot-clé utilise-t-on pour une valeur qui ne changera jamais ?
 
 - [x] `const`
 - [ ] `let`
@@ -622,7 +602,7 @@ En JavaScript moderne, la règle est : `const` par défaut, `let` uniquement qua
 </quiz>
 
 <quiz>
-Que vaut `typeof "45"` ?
+2. Que vaut `typeof "45"` ?
 
 - [ ] `'number'`
 - [x] `'string'`
@@ -633,7 +613,7 @@ Les guillemets font toute la différence : `45` est un nombre, `"45"` est une ch
 </quiz>
 
 <quiz>
-Qu'affiche `console.log("Prix : " + 45)` ?
+3. Qu'affiche `console.log("Prix : " + 45)` ?
 
 - [ ] `45`
 - [x] `Prix : 45`
@@ -644,7 +624,7 @@ Dès qu'un des deux opérandes est une chaîne, le `+` ne fait plus une addition
 </quiz>
 
 <quiz>
-Quels types font partie des types de base de JavaScript ?
+4. Quels types font partie des types de base de JavaScript ?
 
 - [x] `number`
 - [x] `string`
@@ -655,7 +635,7 @@ JavaScript ne distingue pas les entiers des décimaux : tout est `number`. Les a
 </quiz>
 
 <quiz>
-Que manque-t-il à cette fonction pour être utilisable dans un calcul ?
+5. Que manque-t-il à cette fonction pour être utilisable dans un calcul ?
 
 ```js
 function calculerTotal(prix, quantite) {
@@ -672,7 +652,7 @@ Elle affiche le résultat mais ne le **renvoie** pas : `calculerTotal(45, 3) * 1
 </quiz>
 
 <quiz>
-Qu'affiche ce code ?
+6. Qu'affiche ce code ?
 
 ```js
 if (true) {
@@ -690,9 +670,42 @@ Une variable déclarée avec `const` ou `let` n'existe qu'à l'intérieur de son
 </quiz>
 
 <quiz>
-La forme courte pour écrire une fonction, avec le symbole `=>`, s'appelle une fonction [[fléchée]].
+7. La forme courte pour écrire une fonction, avec le symbole `=>`, s'appelle une fonction [[fléchée]].
 
 Exemple : `const doubler = (n) => n * 2;`
+</quiz>
+
+<quiz>
+8. Quelle est la différence entre l'égalité simple (`==`) et l'égalité stricte (`===`) ?
+
+- [ ] `==` compare uniquement le type, `===` compare uniquement la valeur.
+- [x] `===` compare à la fois la valeur ET le type de la donnée, contrairement à `==`.
+- [ ] Il n'y a aucune différence, ce sont des synonymes.
+- [ ] `===` sert à affecter une valeur à une constante.
+
+Bonne pratique : Prenez l'habitude d'utiliser l'égalité stricte (`===`). L'égalité simple (`==`) convertit automatiquement les types, ce qui peut créer des comportements inattendus ("2" == 2 renvoie true, mais "2" === 2 renvoie false).
+</quiz>
+
+<quiz>
+9. Dans le tableau suivant : `let fruits = ["pomme", "banane", "orange"];`, comment accéder à la valeur "banane" ?
+
+- [ ] `fruits[2]`
+- [x] `fruits[1]`
+- [ ] `fruits("banane")`
+- [ ] `fruits[0]`
+
+En JavaScript, un tableau est une liste ordonnée qui commence toujours à l'index 0. Le 1er élément est à l'index 0, le 2ème est à l'index 1, etc.
+</quiz>
+
+<quiz>
+10. Quelle syntaxe permet d'insérer directement une variable dans une chaîne de caractères (méthode moderne) ?
+
+- [ ] `"Bonjour " + nom`
+- [ ] `'Bonjour ${nom}'`
+- [x] `` `Bonjour ${nom}` ``
+- [ ] `"Bonjour ${nom}"`
+
+Il faut utiliser les backticks (``) et la syntaxe `${variable}`. C'est ce qu'on appelle les *template literals*, une méthode recommandée car beaucoup plus lisible que la concaténation classique avec `+`.
 </quiz>
 
 <!-- mkdocs-quiz results -->
@@ -700,7 +713,7 @@ Exemple : `const doubler = (n) => n * 2;`
 
 
 
-# TEST - Atelier 1 – Découvrir les bases de JavaScript
+# PRACTICES – Découvrir les bases de JavaScript
 
 !!! info "En bref"
     **Durée : 15 min** · **Prérequis :** Node.js installé · **Fichier :** `atelier1.js`
@@ -859,6 +872,59 @@ Indice : `montant.toFixed(2)` formate un nombre avec deux décimales.
     ```
     Les backticks ` `` ` créent un *template literal* : on y insère des valeurs
     avec `${...}`, sans concaténation.
+
+---
+
+## Partie 6 — Tableaux et Boucles (6 min)
+
+En JavaScript, les tableaux (Array) permettent de stocker des listes, et les boucles permettent de les parcourir.
+
+1. Créez un tableau `prixArticles` contenant trois nombres : `15`, `25`, et `10`.
+2. Créez une variable `totalPanier` initialisée à `0`.
+3. Utilisez une boucle `for` pour parcourir le tableau `prixArticles` et ajouter chaque prix à la variable `totalPanier`.
+4. Affichez le `totalPanier` dans la console.
+
+Indice : Utilisez la propriété `.length` pour déterminer dynamiquement la limite de votre boucle.
+
+??? success "Corrigé"
+    ```js
+    const prixArticles = [15, 25, 10]; // Tableau contenant 3 éléments
+    let totalPanier = 0;
+
+    // La boucle commence à l'index 0 et s'arrête juste avant length (3)
+    for (let i = 0; i < prixArticles.length; i++) {
+      totalPanier = totalPanier + prixArticles[i]; 
+      // ou totalPanier += prixArticles[i];
+    }
+
+    console.log(`Le total du panier est de : ${totalPanier} €`); // 50 €
+    ```
+    On commence toujours à `i = 0` car le premier élément du tableau est à l'index 0. La condition `i < prixArticles.length` garantit que l'on ne dépasse pas la taille du tableau.
+
+---
+
+## Partie 7 — Conditions et Égalité stricte (4 min)
+
+Les conditions permettent à votre programme de prendre des décisions. Il est recommandé d'utiliser l'égalité stricte (`===`) pour éviter les erreurs de type.
+
+1. Créez une variable `stockDispo` et assignez-lui le nombre `0`.
+2. Créez un bloc `if / else` :
+   - Si `stockDispo` est strictement égal à `0`, affichez "Rupture de stock !".
+   - Sinon, affichez "Produit disponible.".
+3. Modifiez `stockDispo` en lui assignant la chaîne de caractères `"0"` (texte) et testez à nouveau. Que se passe-t-il ?
+
+??? success "Corrigé"
+    ```js
+    let stockDispo = 0;
+
+    if (stockDispo === 0) {
+      console.log("Rupture de stock !");
+    } else {
+      console.log("Produit disponible.");
+    }
+    ```
+    Si vous passez `stockDispo = "0"` avec l'opérateur `===`, le programme affichera "Produit disponible.". Pourquoi ? Car `"0"` (texte) n'est pas strictement égal à `0` (nombre). Si vous aviez utilisé `==`, le programme aurait affiché "Rupture de stock !" à tort !
+
 
 ---
 
