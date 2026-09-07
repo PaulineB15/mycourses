@@ -12,6 +12,8 @@
         <link rel="prev" href="../..">
       
       
+        <link rel="next" href="../../PHP/HowToOpenProject/">
+      
       
         
       
@@ -747,6 +749,172 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PHP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PHP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHP/HowToOpenProject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to open a project in PHP ?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHP/PHPBasis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les fondamentaux de PHP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHP/PHPForm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formulaire et sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHP/Superglobals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Superglobals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1973,15 +2141,16 @@ Il faut utiliser les backticks (``) et la syntaxe `${variable}`. C'est ce qu'on 
     </div>
 </div>
 
-<h1 id="practices-decouvrir-les-bases-de-javascript">PRACTICES – Découvrir les bases de JavaScript</h1>
+<h1 id="atelier-1-decouvrir-les-bases-de-javascript">Atelier 1 – Découvrir les bases de JavaScript</h1>
 <div class="admonition info">
 <p class="admonition-title">En bref</p>
-<p><strong>Durée : 15 min</strong> · <strong>Prérequis :</strong> Node.js installé · <strong>Fichier :</strong> <code>atelier1.js</code>
+<p><strong>Durée : 40 min</strong> · <strong>Prérequis :</strong> Node.js installé · <strong>Fichier :</strong> <code>atelier1.js</code>
 · <strong>Exécution :</strong> <code>node atelier1.js</code></p>
 </div>
 <h2 id="objectif">Objectif</h2>
-<p>Créer une petite fiche produit pour une boutique, en manipulant les quatre
-briques de base du langage : <strong>variables</strong>, <strong>types</strong>, <strong>fonctions</strong>, <strong>blocs</strong>.</p>
+<p>Créer une petite fiche produit pour une boutique, en manipulant les briques
+de base du langage : <strong>variables</strong>, <strong>types</strong>, <strong>opérateurs</strong>, <strong>conditions</strong>,
+<strong>boucles</strong>, <strong>fonctions</strong> et <strong>blocs</strong>.</p>
 <p>Créez un fichier <code>atelier1.js</code> et avancez partie par partie. Après chaque
 partie, relancez <code>node atelier1.js</code> pour vérifier que tout fonctionne encore.</p>
 <hr />
@@ -2029,7 +2198,182 @@ convertit alors le nombre en texte. C'est la source d'erreur la plus
 fréquente chez les débutants.</p>
 </details>
 <hr />
-<h2 id="partie-3-ecrire-des-fonctions-5-min">Partie 3 — Écrire des fonctions (5 min)</h2>
+<h2 id="partie-3-operateurs-et-egalite-stricte-5-min">Partie 3 — Opérateurs et égalité stricte (5 min)</h2>
+<p>Il est recommandé d'utiliser l'<strong>égalité stricte</strong> (<code>===</code>) plutôt que
+l'égalité simple (<code>==</code>), car cette dernière convertit automatiquement les
+types et peut cacher des bugs.</p>
+<ol>
+<li>Créez une variable <code>stockDispo</code> et assignez-lui le nombre <code>0</code>.</li>
+<li>Créez un bloc <code>if / else</code> :</li>
+<li>Si <code>stockDispo</code> est strictement égal à <code>0</code>, affichez <code>"Rupture de stock !"</code>.</li>
+<li>Sinon, affichez <code>"Produit disponible."</code>.</li>
+<li>Modifiez <code>stockDispo</code> en lui assignant la chaîne de caractères <code>"0"</code> (texte)
+   et testez à nouveau avec <code>===</code>. Que se passe-t-il ? Puis testez avec <code>==</code>.</li>
+</ol>
+<details class="success">
+<summary>Corrigé</summary>
+<p><div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">stockDispo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">stockDispo</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Rupture de stock !"</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Produit disponible."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+Avec <code>stockDispo = "0"</code> et l'opérateur <code>===</code>, le programme affiche
+<code>"Produit disponible."</code>. Pourquoi ? Parce que <code>"0"</code> (texte) n'est pas
+strictement égal à <code>0</code> (nombre) : le type compte autant que la valeur.
+Avec <code>==</code>, le programme aurait affiché <code>"Rupture de stock !"</code> à tort, car
+<code>==</code> convertit <code>"0"</code> en nombre avant de comparer.</p>
+</details>
+<hr />
+<h2 id="partie-4-les-conditions-10-min">Partie 4 — Les conditions (10 min)</h2>
+<p>C'est souvent le point le plus difficile à automatiser au début : on hésite
+entre <code>if</code>, <code>else if</code> et <code>switch</code>. Voici trois exercices progressifs.</p>
+<h3 id="41-if-else-if-else">4.1 — <code>if / else if / else</code></h3>
+<p>Écrivez un bloc qui affiche un message selon la variable <code>quantite</code> :</p>
+<ul>
+<li>si <code>quantite === 0</code> → <code>"Aucune commande."</code></li>
+<li>si <code>quantite</code> est comprise entre 1 et 4 (inclus) → <code>"Petite commande."</code></li>
+<li>si <code>quantite</code> est supérieure à 4 → <code>"Grosse commande, pensez à vérifier le stock."</code></li>
+</ul>
+<details class="success">
+<summary>Corrigé</summary>
+<p><div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">quantite</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Aucune commande."</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">quantite</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">4</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Petite commande."</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Grosse commande, pensez à vérifier le stock."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+Astuce pour s'y retrouver : le <code>if</code> teste toujours la première condition ;
+chaque <code>else if</code> n'est testé QUE si les précédents ont échoué ; le <code>else</code>
+final attrape tout le reste, sans condition. Ordonnez toujours vos
+conditions de la plus restrictive à la plus large.</p>
+</details>
+<h3 id="42-negation">4.2 — Négation (<code>!</code>)</h3>
+<p>En réutilisant <code>stockDispo</code> de la partie 3, écrivez une condition qui utilise
+l'opérateur de négation <code>!</code> pour afficher <code>"Il faut réapprovisionner."</code> quand
+le produit n'est <strong>pas</strong> disponible (c'est-à-dire quand <code>stockDispo === 0</code>,
+donc une valeur "fausse").</p>
+<details class="success">
+<summary>Corrigé</summary>
+<p><div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">produitDisponible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">stockDispo</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// true ou false</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">produitDisponible</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Il faut réapprovisionner."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<code>!produitDisponible</code> se lit "si produitDisponible N'EST PAS vrai". C'est
+souvent plus lisible qu'un <code>=== false</code> explicite, à condition de bien
+nommer sa variable booléenne (ici avec un adjectif, comme si on répondait
+à une question par oui/non).</p>
+</details>
+<h3 id="43-switch">4.3 — <code>switch</code></h3>
+<p>Une boutique propose 3 niveaux de livraison : <code>"standard"</code>, <code>"express"</code> et
+<code>"same-day"</code>. Créez une variable <code>typeLivraison</code> et un <code>switch</code> qui affiche :</p>
+<ul>
+<li><code>"standard"</code> → <code>"Livraison en 5 jours, gratuite."</code></li>
+<li><code>"express"</code> → <code>"Livraison en 48h, +5€."</code></li>
+<li><code>"same-day"</code> → <code>"Livraison aujourd'hui, +15€."</code></li>
+<li>toute autre valeur → <code>"Type de livraison inconnu."</code> (via <code>default</code>)</li>
+</ul>
+<p>N'oubliez pas le <code>break</code> après chaque <code>case</code> !</p>
+<details class="success">
+<summary>Corrigé</summary>
+<p><div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">typeLivraison</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"express"</span><span class="p">;</span>
+
+<span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">typeLivraison</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="s2">"standard"</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Livraison en 5 jours, gratuite."</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="s2">"express"</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Livraison en 48h, +5€."</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">case</span><span class="w"> </span><span class="s2">"same-day"</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Livraison aujourd'hui, +15€."</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="k">default</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Type de livraison inconnu."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+Un <code>switch</code> est utile quand on compare <strong>une seule variable</strong> à
+<strong>plusieurs valeurs précises</strong>. Si vous oubliez un <code>break</code>, l'exécution
+continue dans le <code>case</code> suivant (on appelle ça le "fall-through") : c'est
+une erreur très fréquente, pensez à toujours vérifier que chaque <code>case</code>
+en a un.</p>
+</details>
+<hr />
+<h2 id="partie-5-les-boucles-10-min">Partie 5 — Les boucles (10 min)</h2>
+<p>Les boucles permettent de répéter une action. Voici trois exercices, du plus
+simple (<code>while</code>) au plus utile au quotidien (<code>for</code> sur un tableau).</p>
+<h3 id="51-while">5.1 — <code>while</code></h3>
+<p>Utilisez une boucle <code>while</code> pour afficher un compte à rebours de <code>5</code> à <code>1</code>,
+puis <code>"Décollage !"</code> à la fin.</p>
+<details class="success">
+<summary>Corrigé</summary>
+<p><div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">compteur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+
+<span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nx">compteur</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">compteur</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">compteur</span><span class="o">--</span><span class="p">;</span><span class="w"> </span><span class="c1">// indispensable, sinon boucle infinie</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Décollage !"</span><span class="p">);</span>
+</code></pre></div>
+Le piège classique du <code>while</code> : oublier de faire évoluer la variable
+testée dans la condition (<code>compteur--</code> ici). Sans ça, la condition reste
+toujours vraie et la boucle ne s'arrête jamais.</p>
+</details>
+<h3 id="52-for-et-tableaux">5.2 — <code>for</code> et tableaux</h3>
+<ol>
+<li>Créez un tableau <code>prixArticles</code> contenant trois nombres : <code>15</code>, <code>25</code>, et <code>10</code>.</li>
+<li>Créez une variable <code>totalPanier</code> initialisée à <code>0</code>.</li>
+<li>Utilisez une boucle <code>for</code> pour parcourir le tableau <code>prixArticles</code> et
+   ajouter chaque prix à la variable <code>totalPanier</code>.</li>
+<li>Affichez le <code>totalPanier</code> dans la console.</li>
+</ol>
+<p>Indice : utilisez la propriété <code>.length</code> pour déterminer dynamiquement la
+limite de votre boucle.</p>
+<details class="success">
+<summary>Corrigé</summary>
+<p><div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">prixArticles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">];</span><span class="w"> </span><span class="c1">// Tableau contenant 3 éléments</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">totalPanier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+
+<span class="c1">// La boucle commence à l'index 0 et s'arrête juste avant length (3)</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">prixArticles</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">totalPanier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">totalPanier</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">prixArticles</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">  </span><span class="c1">// ou totalPanier += prixArticles[i];</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Le total du panier est de : </span><span class="si">${</span><span class="nx">totalPanier</span><span class="si">}</span><span class="sb"> €`</span><span class="p">);</span><span class="w"> </span><span class="c1">// 50 €</span>
+</code></pre></div>
+On commence toujours à <code>i = 0</code> car le premier élément du tableau est à
+l'index 0. La condition <code>i &lt; prixArticles.length</code> garantit que l'on ne
+dépasse pas la taille du tableau.</p>
+</details>
+<h3 id="53-combiner-boucle-et-condition">5.3 — Combiner boucle et condition</h3>
+<p>En réutilisant <code>prixArticles</code>, écrivez une boucle <code>for</code> qui affiche
+uniquement les articles dont le prix est <strong>strictement supérieur à 12€</strong>,
+sous la forme <code>"Article cher : 15€"</code>.</p>
+<details class="success">
+<summary>Corrigé</summary>
+<p><div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">prixArticles</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">prixArticles</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">12</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Article cher : </span><span class="si">${</span><span class="nx">prixArticles</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="si">}</span><span class="sb">€`</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+C'est un enchaînement très courant : la boucle <strong>parcourt</strong>, la condition
+<strong>filtre</strong>. Presque tous les traitements de listes se ramènent à ce
+duo boucle + <code>if</code>.</p>
+</details>
+<hr />
+<h2 id="partie-6-ecrire-des-fonctions-10-min">Partie 6 — Écrire des fonctions (10 min)</h2>
+<p>Une fonction regroupe du code réutilisable. Voici trois exercices, jusqu'à
+combiner fonctions, conditions et boucles.</p>
+<h3 id="61-deux-formes-de-fonctions">6.1 — Deux formes de fonctions</h3>
 <p>Écrivez deux fonctions, chacune sous une forme différente :</p>
 <table>
 <thead>
@@ -2069,8 +2413,62 @@ l'afficher. C'est l'appelant qui décide quoi en faire.</p>
 Les deux formes font la même chose. La fonction fléchée est simplement une
 écriture plus courte, très répandue dans le code moderne.</p>
 </details>
+<h3 id="62-fonction-avec-condition-a-linterieur">6.2 — Fonction avec condition à l'intérieur</h3>
+<p>Écrivez une fonction <code>statutStock(stock)</code> qui prend un nombre en paramètre et
+qui <strong>renvoie</strong> (<code>return</code>, toujours pas de <code>console.log</code> à l'intérieur) :</p>
+<ul>
+<li><code>"Rupture"</code> si <code>stock === 0</code></li>
+<li><code>"Stock faible"</code> si <code>stock</code> est entre 1 et 5</li>
+<li><code>"En stock"</code> sinon</li>
+</ul>
+<p>Testez-la avec plusieurs valeurs, par exemple <code>statutStock(0)</code>,
+<code>statutStock(3)</code> et <code>statutStock(20)</code>.</p>
+<details class="success">
+<summary>Corrigé</summary>
+<p><div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">statutStock</span><span class="p">(</span><span class="nx">stock</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">stock</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">"Rupture"</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">stock</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">"Stock faible"</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">"En stock"</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">statutStock</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span><span class="w">  </span><span class="c1">// "Rupture"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">statutStock</span><span class="p">(</span><span class="mf">3</span><span class="p">));</span><span class="w">  </span><span class="c1">// "Stock faible"</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">statutStock</span><span class="p">(</span><span class="mf">20</span><span class="p">));</span><span class="w"> </span><span class="c1">// "En stock"</span>
+</code></pre></div>
+Dès qu'un <code>return</code> est exécuté, la fonction s'arrête immédiatement : pas
+besoin de <code>else</code> après un <code>return</code> dans le premier <code>if</code>, mais l'écrire
+reste plus lisible pour les débutants. C'est le même raisonnement que la
+Partie 4.1, simplement encapsulé dans une fonction pour être réutilisable.</p>
+</details>
+<h3 id="63-fonction-avec-boucle-a-linterieur">6.3 — Fonction avec boucle à l'intérieur</h3>
+<p>Écrivez une fonction <code>calculerTotalPanier(tableauPrix)</code> qui prend un tableau
+de nombres en paramètre, fait la somme avec une boucle <code>for</code> à l'intérieur,
+et <strong>renvoie</strong> le total (toujours pas d'affichage dans la fonction).</p>
+<p>Testez-la avec <code>calculerTotalPanier(prixArticles)</code> : le résultat doit valoir
+<code>50</code>.</p>
+<details class="success">
+<summary>Corrigé</summary>
+<p><div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">calculerTotalPanier</span><span class="p">(</span><span class="nx">tableauPrix</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">tableauPrix</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">total</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">tableauPrix</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">total</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">calculerTotalPanier</span><span class="p">(</span><span class="nx">prixArticles</span><span class="p">));</span><span class="w"> </span><span class="c1">// 50</span>
+</code></pre></div>
+C'est exactement la boucle de la Partie 5.2, mais rendue réutilisable :
+on peut maintenant appeler <code>calculerTotalPanier</code> sur n'importe quel
+tableau de prix, sans réécrire la boucle à chaque fois. C'est tout
+l'intérêt d'une fonction : encapsuler une logique pour l'appeler partout.</p>
+</details>
 <hr />
-<h2 id="partie-4-comprendre-les-blocs-3-min">Partie 4 — Comprendre les blocs (3 min)</h2>
+<h2 id="partie-7-comprendre-les-blocs-3-min">Partie 7 — Comprendre les blocs (3 min)</h2>
 <p>Un <strong>bloc</strong> est tout ce qui se trouve entre <code>{</code> et <code>}</code>. Une variable déclarée
 avec <code>let</code> ou <code>const</code> n'existe qu'à l'intérieur de son bloc.</p>
 <p>Testez ce code et observez l'erreur :</p>
@@ -2097,73 +2495,32 @@ est mort en même temps que le bloc <code>if</code>.</p>
 </code></pre></div>
 </details>
 <hr />
-<h2 id="partie-5-assembler-bonus-si-le-temps-le-permet">Partie 5 — Assembler (bonus, si le temps le permet)</h2>
+<h2 id="partie-8-assembler-bonus-si-le-temps-le-permet">Partie 8 — Assembler (bonus, si le temps le permet)</h2>
 <p>Écrivez une fonction <code>afficherFiche()</code> qui utilise tout ce qui précède et
 affiche exactement :</p>
-<div class="highlight"><pre><span></span><code>Clavier — 3 x 45 € = 135.00 € HT (162.00 € TTC)
+<div class="highlight"><pre><span></span><code>Clavier — 3 x 45 € = 135.00 € HT (162.00 € TTC) — En stock
 </code></pre></div>
-<p>Indice : <code>montant.toFixed(2)</code> formate un nombre avec deux décimales.</p>
+<p>Indices :
+- <code>montant.toFixed(2)</code> formate un nombre avec deux décimales.
+- Réutilisez <code>statutStock()</code> de la Partie 6.2 avec <code>quantite</code> comme argument.</p>
 <details class="success">
 <summary>Corrigé</summary>
 <p><div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">afficherFiche</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">totalHT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calculerTotalHT</span><span class="p">(</span><span class="nx">prixHT</span><span class="p">,</span><span class="w"> </span><span class="nx">quantite</span><span class="p">);</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">totalTTC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">calculerTTC</span><span class="p">(</span><span class="nx">totalHT</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">statut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">statutStock</span><span class="p">(</span><span class="nx">quantite</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-<span class="w">    </span><span class="sb">`</span><span class="si">${</span><span class="nx">nomProduit</span><span class="si">}</span><span class="sb"> — </span><span class="si">${</span><span class="nx">quantite</span><span class="si">}</span><span class="sb"> x </span><span class="si">${</span><span class="nx">prixHT</span><span class="si">}</span><span class="sb"> € = </span><span class="si">${</span><span class="nx">totalHT</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="si">}</span><span class="sb"> € HT (</span><span class="si">${</span><span class="nx">totalTTC</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="si">}</span><span class="sb"> € TTC)`</span>
+<span class="w">    </span><span class="sb">`</span><span class="si">${</span><span class="nx">nomProduit</span><span class="si">}</span><span class="sb"> — </span><span class="si">${</span><span class="nx">quantite</span><span class="si">}</span><span class="sb"> x </span><span class="si">${</span><span class="nx">prixHT</span><span class="si">}</span><span class="sb"> € = </span><span class="si">${</span><span class="nx">totalHT</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="si">}</span><span class="sb"> € HT (</span><span class="si">${</span><span class="nx">totalTTC</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="si">}</span><span class="sb"> € TTC) — </span><span class="si">${</span><span class="nx">statut</span><span class="si">}</span><span class="sb">`</span>
 <span class="w">  </span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">afficherFiche</span><span class="p">();</span>
 </code></pre></div>
 Les backticks <code>``</code> créent un <em>template literal</em> : on y insère des valeurs
-avec <code>${...}</code>, sans concaténation.</p>
-</details>
-<hr />
-<h2 id="partie-6-tableaux-et-boucles-6-min">Partie 6 — Tableaux et Boucles (6 min)</h2>
-<p>En JavaScript, les tableaux (Array) permettent de stocker des listes, et les boucles permettent de les parcourir.</p>
-<ol>
-<li>Créez un tableau <code>prixArticles</code> contenant trois nombres : <code>15</code>, <code>25</code>, et <code>10</code>.</li>
-<li>Créez une variable <code>totalPanier</code> initialisée à <code>0</code>.</li>
-<li>Utilisez une boucle <code>for</code> pour parcourir le tableau <code>prixArticles</code> et ajouter chaque prix à la variable <code>totalPanier</code>.</li>
-<li>Affichez le <code>totalPanier</code> dans la console.</li>
-</ol>
-<p>Indice : Utilisez la propriété <code>.length</code> pour déterminer dynamiquement la limite de votre boucle.</p>
-<details class="success">
-<summary>Corrigé</summary>
-<p><div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">prixArticles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">15</span><span class="p">,</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">];</span><span class="w"> </span><span class="c1">// Tableau contenant 3 éléments</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">totalPanier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
-
-<span class="c1">// La boucle commence à l'index 0 et s'arrête juste avant length (3)</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">prixArticles</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">totalPanier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">totalPanier</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">prixArticles</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span><span class="w"> </span>
-<span class="w">  </span><span class="c1">// ou totalPanier += prixArticles[i];</span>
-<span class="p">}</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Le total du panier est de : </span><span class="si">${</span><span class="nx">totalPanier</span><span class="si">}</span><span class="sb"> €`</span><span class="p">);</span><span class="w"> </span><span class="c1">// 50 €</span>
-</code></pre></div>
-On commence toujours à <code>i = 0</code> car le premier élément du tableau est à l'index 0. La condition <code>i &lt; prixArticles.length</code> garantit que l'on ne dépasse pas la taille du tableau.</p>
-</details>
-<hr />
-<h2 id="partie-7-conditions-et-egalite-stricte-4-min">Partie 7 — Conditions et Égalité stricte (4 min)</h2>
-<p>Les conditions permettent à votre programme de prendre des décisions. Il est recommandé d'utiliser l'égalité stricte (<code>===</code>) pour éviter les erreurs de type.</p>
-<ol>
-<li>Créez une variable <code>stockDispo</code> et assignez-lui le nombre <code>0</code>.</li>
-<li>Créez un bloc <code>if / else</code> :</li>
-<li>Si <code>stockDispo</code> est strictement égal à <code>0</code>, affichez "Rupture de stock !".</li>
-<li>Sinon, affichez "Produit disponible.".</li>
-<li>Modifiez <code>stockDispo</code> en lui assignant la chaîne de caractères <code>"0"</code> (texte) et testez à nouveau. Que se passe-t-il ?</li>
-</ol>
-<details class="success">
-<summary>Corrigé</summary>
-<p><div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">stockDispo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
-
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">stockDispo</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Rupture de stock !"</span><span class="p">);</span>
-<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Produit disponible."</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div>
-Si vous passez <code>stockDispo = "0"</code> avec l'opérateur <code>===</code>, le programme affichera "Produit disponible.". Pourquoi ? Car <code>"0"</code> (texte) n'est pas strictement égal à <code>0</code> (nombre). Si vous aviez utilisé <code>==</code>, le programme aurait affiché "Rupture de stock !" à tort !</p>
+avec <code>${...}</code>, sans concaténation. Cette partie montre l'intérêt de bien
+découper son code en petites fonctions (Partie 6) : <code>afficherFiche()</code> ne
+fait presque rien elle-même, elle <strong>assemble</strong> les résultats d'autres
+fonctions déjà testées.</p>
 </details>
 <hr />
 <h2 id="ce-que-vous-devez-savoir-faire-en-sortant">Ce que vous devez savoir faire en sortant</h2>
@@ -2171,7 +2528,11 @@ Si vous passez <code>stockDispo = "0"</code> avec l'opérateur <code>===</code>,
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Déclarer une variable avec <code>const</code> ou <code>let</code> et choisir entre les deux.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vérifier le type d'une valeur avec <code>typeof</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Expliquer pourquoi <code>"Prix : " + 45</code> ne donne pas un nombre.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Expliquer la différence entre <code>==</code> et <code>===</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Écrire une condition <code>if / else if / else</code> et un <code>switch</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Écrire une boucle <code>while</code> et une boucle <code>for</code> sur un tableau.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Écrire une fonction qui <code>return</code> un résultat, sous deux formes.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Écrire une fonction qui contient une condition ou une boucle.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Dire où commence et où finit la vie d'une variable de bloc.</li>
 </ul><div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
   <!-- mkdocs-quiz progress sidebar (desktop) -->
