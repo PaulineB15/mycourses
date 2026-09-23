@@ -121,3 +121,50 @@ if age >= 18:
 else:
     print("Tu es mineure.")
 ```
+## 7. Les Fonctions (`def`)
+
+Les fonctions permettent de regrouper un bloc de code sous un nom spécifique pour pouvoir le réutiliser à volonté. Une fonction peut prendre des paramètres en entrée (les données qu'on lui fournit) et renvoyer un résultat avec le mot-clé `return`.
+
+```python
+# Définition de la fonction
+def saluer(prenom):
+    message = "Bonjour " + prenom + " !"
+    return message
+
+# Appels de la fonction
+print(saluer("Pauline"))
+print(saluer("Alice"))
+```
+
+## 8. Les modules
+Les modules sont des boîtes à outils contenant du code Python déjà écrit. Au lieu de réinventer la roue pour des calculs complexes ou des opérations spécifiques, tu peux simplement importer le module correspondant.
+
+```python
+# Importation du module mathématique intégré à Python
+import math
+
+# Utilisation d'une constante (Pi) et d'une fonction (racine carrée) du module
+print("Valeur de Pi :", math.pi)
+print("Racine carrée de 25 :", math.sqrt(25))
+```
+## 9. Classes et Objets (Introduction à la POO)
+La programmation orientée objet permet de modéliser des concepts concrets. Une classe est un plan de construction (le modèle), et un objet est la création issue de ce plan. C'est la notion que tu pourras utiliser pour l'extension optionnelle de ton mini-projet.
+```python
+# Création de la classe (le plan)
+class Utilisateur:
+    # La méthode __init__ initialise les caractéristiques de l'objet lors de sa création
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+    
+    # Une méthode est une action que l'objet peut accomplir
+    def dire_bonjour(self):
+        print(f"Bonjour, je suis {self.nom} et j'ai {self.age} ans.")
+
+# Création d'objets (les instances)
+user1 = Utilisateur("Pauline", 25)
+user2 = Utilisateur("Marc", 30)
+
+# Utilisation de la méthode sur le premier objet
+user1.dire_bonjour()
+```
