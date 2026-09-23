@@ -713,16 +713,17 @@ Il faut utiliser les backticks (``) et la syntaxe `${variable}`. C'est ce qu'on 
 
 
 
-# PRACTICES – Découvrir les bases de JavaScript
+# Atelier 1 – Découvrir les bases de JavaScript
 
 !!! info "En bref"
-    **Durée : 15 min** · **Prérequis :** Node.js installé · **Fichier :** `atelier1.js`
+    **Durée : 40 min** · **Prérequis :** Node.js installé · **Fichier :** `atelier1.js`
     · **Exécution :** `node atelier1.js`
 
 ## Objectif
 
-Créer une petite fiche produit pour une boutique, en manipulant les quatre
-briques de base du langage : **variables**, **types**, **fonctions**, **blocs**.
+Créer une petite fiche produit pour une boutique, en manipulant les briques
+de base du langage : **variables**, **types**, **opérateurs**, **conditions**,
+**boucles**, **fonctions** et **blocs**.
 
 Créez un fichier `atelier1.js` et avancez partie par partie. Après chaque
 partie, relancez `node atelier1.js` pour vérifier que tout fonctionne encore.
@@ -781,7 +782,202 @@ Que s'est-il passé sur la deuxième ligne ?
 
 ---
 
-## Partie 3 — Écrire des fonctions (5 min)
+## Partie 3 — Opérateurs et égalité stricte (5 min)
+
+Il est recommandé d'utiliser l'**égalité stricte** (`===`) plutôt que
+l'égalité simple (`==`), car cette dernière convertit automatiquement les
+types et peut cacher des bugs.
+
+1. Créez une variable `stockDispo` et assignez-lui le nombre `0`.
+2. Créez un bloc `if / else` :
+   - Si `stockDispo` est strictement égal à `0`, affichez `"Rupture de stock !"`.
+   - Sinon, affichez `"Produit disponible."`.
+3. Modifiez `stockDispo` en lui assignant la chaîne de caractères `"0"` (texte)
+   et testez à nouveau avec `===`. Que se passe-t-il ? Puis testez avec `==`.
+
+??? success "Corrigé"
+    ```js
+    let stockDispo = 0;
+
+    if (stockDispo === 0) {
+      console.log("Rupture de stock !");
+    } else {
+      console.log("Produit disponible.");
+    }
+    ```
+    Avec `stockDispo = "0"` et l'opérateur `===`, le programme affiche
+    `"Produit disponible."`. Pourquoi ? Parce que `"0"` (texte) n'est pas
+    strictement égal à `0` (nombre) : le type compte autant que la valeur.
+    Avec `==`, le programme aurait affiché `"Rupture de stock !"` à tort, car
+    `==` convertit `"0"` en nombre avant de comparer.
+
+---
+
+## Partie 4 — Les conditions (10 min)
+
+C'est souvent le point le plus difficile à automatiser au début : on hésite
+entre `if`, `else if` et `switch`. Voici trois exercices progressifs.
+
+### 4.1 — `if / else if / else`
+
+Écrivez un bloc qui affiche un message selon la variable `quantite` :
+
+- si `quantite === 0` → `"Aucune commande."`
+- si `quantite` est comprise entre 1 et 4 (inclus) → `"Petite commande."`
+- si `quantite` est supérieure à 4 → `"Grosse commande, pensez à vérifier le stock."`
+
+??? success "Corrigé"
+    ```js
+    if (quantite === 0) {
+      console.log("Aucune commande.");
+    } else if (quantite <= 4) {
+      console.log("Petite commande.");
+    } else {
+      console.log("Grosse commande, pensez à vérifier le stock.");
+    }
+    ```
+    Astuce pour s'y retrouver : le `if` teste toujours la première condition ;
+    chaque `else if` n'est testé QUE si les précédents ont échoué ; le `else`
+    final attrape tout le reste, sans condition. Ordonnez toujours vos
+    conditions de la plus restrictive à la plus large.
+
+### 4.2 — Négation (`!`)
+
+En réutilisant `stockDispo` de la partie 3, écrivez une condition qui utilise
+l'opérateur de négation `!` pour afficher `"Il faut réapprovisionner."` quand
+le produit n'est **pas** disponible (c'est-à-dire quand `stockDispo === 0`,
+donc une valeur "fausse").
+
+??? success "Corrigé"
+    ```js
+    let produitDisponible = stockDispo > 0; // true ou false
+
+    if (!produitDisponible) {
+      console.log("Il faut réapprovisionner.");
+    }
+    ```
+    `!produitDisponible` se lit "si produitDisponible N'EST PAS vrai". C'est
+    souvent plus lisible qu'un `=== false` explicite, à condition de bien
+    nommer sa variable booléenne (ici avec un adjectif, comme si on répondait
+    à une question par oui/non).
+
+### 4.3 — `switch`
+
+Une boutique propose 3 niveaux de livraison : `"standard"`, `"express"` et
+`"same-day"`. Créez une variable `typeLivraison` et un `switch` qui affiche :
+
+- `"standard"` → `"Livraison en 5 jours, gratuite."`
+- `"express"` → `"Livraison en 48h, +5€."`
+- `"same-day"` → `"Livraison aujourd'hui, +15€."`
+- toute autre valeur → `"Type de livraison inconnu."` (via `default`)
+
+N'oubliez pas le `break` après chaque `case` !
+
+??? success "Corrigé"
+    ```js
+    let typeLivraison = "express";
+
+    switch (typeLivraison) {
+      case "standard":
+        console.log("Livraison en 5 jours, gratuite.");
+        break;
+      case "express":
+        console.log("Livraison en 48h, +5€.");
+        break;
+      case "same-day":
+        console.log("Livraison aujourd'hui, +15€.");
+        break;
+      default:
+        console.log("Type de livraison inconnu.");
+    }
+    ```
+    Un `switch` est utile quand on compare **une seule variable** à
+    **plusieurs valeurs précises**. Si vous oubliez un `break`, l'exécution
+    continue dans le `case` suivant (on appelle ça le "fall-through") : c'est
+    une erreur très fréquente, pensez à toujours vérifier que chaque `case`
+    en a un.
+
+---
+
+## Partie 5 — Les boucles (10 min)
+
+Les boucles permettent de répéter une action. Voici trois exercices, du plus
+simple (`while`) au plus utile au quotidien (`for` sur un tableau).
+
+### 5.1 — `while`
+
+Utilisez une boucle `while` pour afficher un compte à rebours de `5` à `1`,
+puis `"Décollage !"` à la fin.
+
+??? success "Corrigé"
+    ```js
+    let compteur = 5;
+
+    while (compteur > 0) {
+      console.log(compteur);
+      compteur--; // indispensable, sinon boucle infinie
+    }
+
+    console.log("Décollage !");
+    ```
+    Le piège classique du `while` : oublier de faire évoluer la variable
+    testée dans la condition (`compteur--` ici). Sans ça, la condition reste
+    toujours vraie et la boucle ne s'arrête jamais.
+
+### 5.2 — `for` et tableaux
+
+1. Créez un tableau `prixArticles` contenant trois nombres : `15`, `25`, et `10`.
+2. Créez une variable `totalPanier` initialisée à `0`.
+3. Utilisez une boucle `for` pour parcourir le tableau `prixArticles` et
+   ajouter chaque prix à la variable `totalPanier`.
+4. Affichez le `totalPanier` dans la console.
+
+Indice : utilisez la propriété `.length` pour déterminer dynamiquement la
+limite de votre boucle.
+
+??? success "Corrigé"
+    ```js
+    const prixArticles = [15, 25, 10]; // Tableau contenant 3 éléments
+    let totalPanier = 0;
+
+    // La boucle commence à l'index 0 et s'arrête juste avant length (3)
+    for (let i = 0; i < prixArticles.length; i++) {
+      totalPanier = totalPanier + prixArticles[i];
+      // ou totalPanier += prixArticles[i];
+    }
+
+    console.log(`Le total du panier est de : ${totalPanier} €`); // 50 €
+    ```
+    On commence toujours à `i = 0` car le premier élément du tableau est à
+    l'index 0. La condition `i < prixArticles.length` garantit que l'on ne
+    dépasse pas la taille du tableau.
+
+### 5.3 — Combiner boucle et condition
+
+En réutilisant `prixArticles`, écrivez une boucle `for` qui affiche
+uniquement les articles dont le prix est **strictement supérieur à 12€**,
+sous la forme `"Article cher : 15€"`.
+
+??? success "Corrigé"
+    ```js
+    for (let i = 0; i < prixArticles.length; i++) {
+      if (prixArticles[i] > 12) {
+        console.log(`Article cher : ${prixArticles[i]}€`);
+      }
+    }
+    ```
+    C'est un enchaînement très courant : la boucle **parcourt**, la condition
+    **filtre**. Presque tous les traitements de listes se ramènent à ce
+    duo boucle + `if`.
+
+---
+
+## Partie 6 — Écrire des fonctions (10 min)
+
+Une fonction regroupe du code réutilisable. Voici trois exercices, jusqu'à
+combiner fonctions, conditions et boucles.
+
+### 6.1 — Deux formes de fonctions
 
 Écrivez deux fonctions, chacune sous une forme différente :
 
@@ -809,9 +1005,68 @@ Testez avec vos variables : le total HT doit valoir `135` et le TTC `162`.
     Les deux formes font la même chose. La fonction fléchée est simplement une
     écriture plus courte, très répandue dans le code moderne.
 
+### 6.2 — Fonction avec condition à l'intérieur
+
+Écrivez une fonction `statutStock(stock)` qui prend un nombre en paramètre et
+qui **renvoie** (`return`, toujours pas de `console.log` à l'intérieur) :
+
+- `"Rupture"` si `stock === 0`
+- `"Stock faible"` si `stock` est entre 1 et 5
+- `"En stock"` sinon
+
+Testez-la avec plusieurs valeurs, par exemple `statutStock(0)`,
+`statutStock(3)` et `statutStock(20)`.
+
+??? success "Corrigé"
+    ```js
+    function statutStock(stock) {
+      if (stock === 0) {
+        return "Rupture";
+      } else if (stock <= 5) {
+        return "Stock faible";
+      } else {
+        return "En stock";
+      }
+    }
+
+    console.log(statutStock(0));  // "Rupture"
+    console.log(statutStock(3));  // "Stock faible"
+    console.log(statutStock(20)); // "En stock"
+    ```
+    Dès qu'un `return` est exécuté, la fonction s'arrête immédiatement : pas
+    besoin de `else` après un `return` dans le premier `if`, mais l'écrire
+    reste plus lisible pour les débutants. C'est le même raisonnement que la
+    Partie 4.1, simplement encapsulé dans une fonction pour être réutilisable.
+
+### 6.3 — Fonction avec boucle à l'intérieur
+
+Écrivez une fonction `calculerTotalPanier(tableauPrix)` qui prend un tableau
+de nombres en paramètre, fait la somme avec une boucle `for` à l'intérieur,
+et **renvoie** le total (toujours pas d'affichage dans la fonction).
+
+Testez-la avec `calculerTotalPanier(prixArticles)` : le résultat doit valoir
+`50`.
+
+??? success "Corrigé"
+    ```js
+    function calculerTotalPanier(tableauPrix) {
+      let total = 0;
+      for (let i = 0; i < tableauPrix.length; i++) {
+        total += tableauPrix[i];
+      }
+      return total;
+    }
+
+    console.log(calculerTotalPanier(prixArticles)); // 50
+    ```
+    C'est exactement la boucle de la Partie 5.2, mais rendue réutilisable :
+    on peut maintenant appeler `calculerTotalPanier` sur n'importe quel
+    tableau de prix, sans réécrire la boucle à chaque fois. C'est tout
+    l'intérêt d'une fonction : encapsuler une logique pour l'appeler partout.
+
 ---
 
-## Partie 4 — Comprendre les blocs (3 min)
+## Partie 7 — Comprendre les blocs (3 min)
 
 Un **bloc** est tout ce qui se trouve entre `{` et `}`. Une variable déclarée
 avec `let` ou `const` n'existe qu'à l'intérieur de son bloc.
@@ -847,84 +1102,37 @@ Corrigez-le pour que l'affichage final fonctionne, **sans supprimer le `if`**.
 
 ---
 
-## Partie 5 — Assembler (bonus, si le temps le permet)
+## Partie 8 — Assembler (bonus, si le temps le permet)
 
 Écrivez une fonction `afficherFiche()` qui utilise tout ce qui précède et
 affiche exactement :
 
 ```text
-Clavier — 3 x 45 € = 135.00 € HT (162.00 € TTC)
+Clavier — 3 x 45 € = 135.00 € HT (162.00 € TTC) — En stock
 ```
 
-Indice : `montant.toFixed(2)` formate un nombre avec deux décimales.
+Indices :
+- `montant.toFixed(2)` formate un nombre avec deux décimales.
+- Réutilisez `statutStock()` de la Partie 6.2 avec `quantite` comme argument.
 
 ??? success "Corrigé"
     ```js
     function afficherFiche() {
       const totalHT = calculerTotalHT(prixHT, quantite);
       const totalTTC = calculerTTC(totalHT);
+      const statut = statutStock(quantite);
       console.log(
-        `${nomProduit} — ${quantite} x ${prixHT} € = ${totalHT.toFixed(2)} € HT (${totalTTC.toFixed(2)} € TTC)`
+        `${nomProduit} — ${quantite} x ${prixHT} € = ${totalHT.toFixed(2)} € HT (${totalTTC.toFixed(2)} € TTC) — ${statut}`
       );
     }
 
     afficherFiche();
     ```
     Les backticks ` `` ` créent un *template literal* : on y insère des valeurs
-    avec `${...}`, sans concaténation.
-
----
-
-## Partie 6 — Tableaux et Boucles (6 min)
-
-En JavaScript, les tableaux (Array) permettent de stocker des listes, et les boucles permettent de les parcourir.
-
-1. Créez un tableau `prixArticles` contenant trois nombres : `15`, `25`, et `10`.
-2. Créez une variable `totalPanier` initialisée à `0`.
-3. Utilisez une boucle `for` pour parcourir le tableau `prixArticles` et ajouter chaque prix à la variable `totalPanier`.
-4. Affichez le `totalPanier` dans la console.
-
-Indice : Utilisez la propriété `.length` pour déterminer dynamiquement la limite de votre boucle.
-
-??? success "Corrigé"
-    ```js
-    const prixArticles = [15, 25, 10]; // Tableau contenant 3 éléments
-    let totalPanier = 0;
-
-    // La boucle commence à l'index 0 et s'arrête juste avant length (3)
-    for (let i = 0; i < prixArticles.length; i++) {
-      totalPanier = totalPanier + prixArticles[i]; 
-      // ou totalPanier += prixArticles[i];
-    }
-
-    console.log(`Le total du panier est de : ${totalPanier} €`); // 50 €
-    ```
-    On commence toujours à `i = 0` car le premier élément du tableau est à l'index 0. La condition `i < prixArticles.length` garantit que l'on ne dépasse pas la taille du tableau.
-
----
-
-## Partie 7 — Conditions et Égalité stricte (4 min)
-
-Les conditions permettent à votre programme de prendre des décisions. Il est recommandé d'utiliser l'égalité stricte (`===`) pour éviter les erreurs de type.
-
-1. Créez une variable `stockDispo` et assignez-lui le nombre `0`.
-2. Créez un bloc `if / else` :
-   - Si `stockDispo` est strictement égal à `0`, affichez "Rupture de stock !".
-   - Sinon, affichez "Produit disponible.".
-3. Modifiez `stockDispo` en lui assignant la chaîne de caractères `"0"` (texte) et testez à nouveau. Que se passe-t-il ?
-
-??? success "Corrigé"
-    ```js
-    let stockDispo = 0;
-
-    if (stockDispo === 0) {
-      console.log("Rupture de stock !");
-    } else {
-      console.log("Produit disponible.");
-    }
-    ```
-    Si vous passez `stockDispo = "0"` avec l'opérateur `===`, le programme affichera "Produit disponible.". Pourquoi ? Car `"0"` (texte) n'est pas strictement égal à `0` (nombre). Si vous aviez utilisé `==`, le programme aurait affiché "Rupture de stock !" à tort !
-
+    avec `${...}`, sans concaténation. Cette partie montre l'intérêt de bien
+    découper son code en petites fonctions (Partie 6) : `afficherFiche()` ne
+    fait presque rien elle-même, elle **assemble** les résultats d'autres
+    fonctions déjà testées.
 
 ---
 
@@ -933,5 +1141,9 @@ Les conditions permettent à votre programme de prendre des décisions. Il est r
 - [ ] Déclarer une variable avec `const` ou `let` et choisir entre les deux.
 - [ ] Vérifier le type d'une valeur avec `typeof`.
 - [ ] Expliquer pourquoi `"Prix : " + 45` ne donne pas un nombre.
+- [ ] Expliquer la différence entre `==` et `===`.
+- [ ] Écrire une condition `if / else if / else` et un `switch`.
+- [ ] Écrire une boucle `while` et une boucle `for` sur un tableau.
 - [ ] Écrire une fonction qui `return` un résultat, sous deux formes.
+- [ ] Écrire une fonction qui contient une condition ou une boucle.
 - [ ] Dire où commence et où finit la vie d'une variable de bloc.
