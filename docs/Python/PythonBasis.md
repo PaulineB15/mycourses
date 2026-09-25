@@ -1,4 +1,4 @@
-# Mes premiers pas avec Python
+# Python basis
 
 ## 1. Affichage et Commentaires (`print` et `#`)
 
@@ -9,7 +9,7 @@ Les commentaires commencent par un `#`. Ils sont ignorés par l'ordinateur et se
 # Ceci est un commentaire, il ne s'affichera pas
 print("Bonjour le monde !") 
 print(42) # On peut aussi afficher des nombres
-````
+```
 
 ## 2. Variables et types de données
 
@@ -148,7 +148,7 @@ print("Valeur de Pi :", math.pi)
 print("Racine carrée de 25 :", math.sqrt(25))
 ```
 ## 9. Classes et Objets (Introduction à la POO)
-La programmation orientée objet permet de modéliser des concepts concrets. Une classe est un plan de construction (le modèle), et un objet est la création issue de ce plan. C'est la notion que tu pourras utiliser pour l'extension optionnelle de ton mini-projet.
+La programmation orientée objet permet de modéliser des concepts concrets. Une classe est un plan de construction (le modèle), et un objet est la création issue de ce plan.
 ```python
 # Création de la classe (le plan)
 class Utilisateur:
